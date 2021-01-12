@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDrop } from 'react-dnd';
+import Bin from './Assets/bin_closed.svg'
 const style = {
     height: '12rem',
     width: '12rem',
@@ -12,7 +13,7 @@ const style = {
     lineHeight: 'normal',
     float: 'left',
 };
-export const Dustbin = ({ accept, lastDroppedItem, onDrop, }) => {
+export const Dustbin = ({ accept, lastDroppedItem, onDrop, asset }) => {
     const [{ isOver, canDrop }, drop] = useDrop({
         accept,
         drop: onDrop,
@@ -29,11 +30,12 @@ export const Dustbin = ({ accept, lastDroppedItem, onDrop, }) => {
     else if (canDrop) {
         backgroundColor = 'darkkhaki';
     }
-    return (<div ref={drop} style={{ ...style, backgroundColor }}>
+    return (<div ref={drop}>
 			{isActive
         ? 'Release to drop'
         : `This dustbin accepts: ${accept.join(', ')}`}
 
 			{lastDroppedItem && (<p>Last dropped: {JSON.stringify(lastDroppedItem)}</p>)}
+            <img alt="bin" src={asset}/>
 		</div>);
 };
