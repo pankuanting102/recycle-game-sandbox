@@ -8,6 +8,12 @@ import Milk from './Assets/milk_box.svg';
 import Banana from './Assets/banana_1.svg';
 import Glass from './Assets/glass.svg';
 import Bin from './Assets/bin_closed.svg';
+import MetalCan from './Assets/metal_can_1.svg';
+import Tire from './Assets/tire.svg';
+import GlassBottle from './Assets/glass_bottle_1.svg';
+import Lighter from './Assets/lighter.svg';
+import Bone from './Assets/fish_bone.svg';
+import FaceWash from './Assets/facewash_tube.svg';
 
 
 
@@ -21,11 +27,18 @@ export const Container = () => {
             lastDroppedItem: null, asset: Bin
         },
         { accepts: [ItemTypes.PAPER, NativeTypes.FILE], asset: Bin },
+        { accepts: [ItemTypes.PAPER, NativeTypes.FILE], asset: Bin },
     ]);
     const [boxes] = useState([
         { name: Glass, type: ItemTypes.GLASS },
         { name: Banana, type: ItemTypes.FOOD },
         { name: Milk, type: ItemTypes.PAPER },
+        { name: MetalCan, type: ItemTypes.GLASS },
+        { name: Tire, type: ItemTypes.GLASS },
+        { name: GlassBottle, type: ItemTypes.GLASS },
+        { name: Lighter, type: ItemTypes.GLASS },
+        { name: Bone, type: ItemTypes.GLASS },
+        { name: FaceWash, type: ItemTypes.GLASS },
     ]);
     const [droppedBoxNames, setDroppedBoxNames] = useState([]);
     function isDropped(boxName) {
