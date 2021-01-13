@@ -1,16 +1,16 @@
 import React from 'react';
 import { useDrop } from 'react-dnd';
-import Bin from './Assets/bin_closed.svg'
+// import Bin from './Assets/bin_closed.svg'
 const style = {
-    height: '12rem',
-    width: '12rem',
-    marginRight: '1.5rem',
-    marginBottom: '1.5rem',
-    color: 'white',
-    padding: '1rem',
-    textAlign: 'center',
-    fontSize: '1rem',
-    lineHeight: 'normal',
+    // height: '12rem',
+    width: '20vw',
+    // marginRight: '1.5rem',
+    // marginBottom: '1.5rem',
+    // color: 'white',
+    // padding: '1rem',
+    // textAlign: 'center',
+    // fontSize: '1rem',
+    // lineHeight: 'normal',
     float: 'left',
 };
 export const Dustbin = ({ accept, lastDroppedItem, onDrop, asset }) => {
@@ -31,11 +31,15 @@ export const Dustbin = ({ accept, lastDroppedItem, onDrop, asset }) => {
         backgroundColor = 'darkkhaki';
     }
     return (<div ref={drop}>
-			{isActive
-        ? 'Release to drop'
-        : `This dustbin accepts: ${accept.join(', ')}`}
-
-			{lastDroppedItem && (<p>Last dropped: {JSON.stringify(lastDroppedItem)}</p>)}
-            <img alt="bin" src={asset}/>
+			
+            <img alt="bin" src={asset} style={style}/>
 		</div>);
 };
+
+
+
+// {isActive
+//     ? 'Release to drop'
+//     : `This dustbin accepts: ${accept.join(', ')}`}
+
+//         {lastDroppedItem && (<p>Last dropped: {JSON.stringify(lastDroppedItem)}</p>)}
