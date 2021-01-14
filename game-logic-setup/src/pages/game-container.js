@@ -12,7 +12,7 @@ import UserMessageContainer from "../components/UserMessageContainer";
 import RecycleFact from "../components/RecycleFact";
 
 
-// if logged in => play 
+// if logged in => play  
 // if not logged in => to sign up page
 
 function Game() {
