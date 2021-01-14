@@ -1,4 +1,3 @@
-
 function TrashContainer() {
 
     console.log("TrashContainer!");

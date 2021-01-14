@@ -2,6 +2,10 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { useSpring, animated } from 'react-spring';
+import clamp from 'lodash-es/clamp';
+import { useGesture } from 'react-with-gesture'
+
+
 
 import GameStats from "../components/GameStats";
 import BinsContainer from "../components/BinsContainer";
@@ -10,7 +14,7 @@ import UserMessageContainer from "../components/UserMessageContainer";
 import RecycleFact from "../components/RecycleFact";
 
 
-// if logged in => play 
+// if logged in => play  
 // if not logged in => to sign up page
 
 function Game() {
@@ -155,7 +159,7 @@ function Game() {
 
             <animated.div className="trash-container">
 
-                <TrashContainer />
+                <TrashContainer/>
 
             </animated.div>
 
