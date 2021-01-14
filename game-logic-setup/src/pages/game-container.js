@@ -2,6 +2,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { useSpring, animated } from 'react-spring';
+import clamp from 'lodash-es/clamp';
+import { useGesture } from 'react-with-gesture'
+
 
 
 import GameStats from "../components/GameStats";
