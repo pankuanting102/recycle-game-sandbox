@@ -1,7 +1,17 @@
+/* eslint-disable react/jsx-no-undef */
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSpring, animated } from 'react-spring';
+
+import GameStats from "../components/GameStats";
+import BinsContainer from "../components/BinsContainer";
+import TrashContainer from "../components/RecycleFact";
+import UserMessageContainer from "../components/UserMessageContainer";
+import RecycleFact from "../components/RecycleFact";
 
 
+// if logged in => play 
+// if not logged in => to sign up page
 
 function Game() {
 
@@ -10,14 +20,20 @@ function Game() {
     // GAME START
     const [gameStart, setGameStart] = useState(false);
     const [gameTimer, setGameTimer] = useState(60);
+
+    // const [gameStart, setGameStart] = useState({
+    //     start: false,
+    //     timer: 60,
+    //     score: 0,  
+    // });
+
+    // from db user authentication id
+    const [gamePlayerName, setGamePlayerName] = useState("");
     const [gameScore, setGameScore] = useState(0);
 
-    // from db
-    const [gamePlayerName, setGamePlayerName] = useState("");
 
     // pop up at wrong drop
     const [gameRecycleFacts, setGameRecycleFacts] = useState("");
-
 
 
     // GAME ASSETS
@@ -34,8 +50,6 @@ function Game() {
 
     // bin
     const [bin, setBin] = useState({
-        positionX: 0,
-        positionY: 0,
         asset: "",
         trashType: "",
     });
@@ -45,6 +59,8 @@ function Game() {
     // ANIMATE + MOVE HOOKS
 
     // drag:
+
+
     // drop:
 
 
@@ -53,13 +69,39 @@ function Game() {
     const [gameEndSummary, setGameEndSummary] = useState("");
     const [newHighScore, setNewHighScore] = useState(false);
 
+    // if (newHighScore) {
+    //     get score
+    //     write to database
+    // }
+
     /////////////////////
 
     // HANDLE FUNCTIONS
 
     // handle gameStart
-    // call timerCountDown ()
-    // game reset()
+
+    useEffect(() => {
+
+        if (gameStart) {
+
+            console.log("start");
+
+            // call timerCountDown ()
+            // game reset()
+
+        }
+
+        
+
+
+
+
+
+
+    });
+
+
+
 
     // handle gameRest
     // reset the setState
@@ -72,6 +114,8 @@ function Game() {
     // call gameOver
 
     // trashRandomPosition
+    // math.random position
+    // assign to new state 
 
     // animateTrashInit
 
@@ -81,7 +125,8 @@ function Game() {
 
     // handleDropCorrect
     // when trash is dropped
-    // handleScore
+    // destroy 
+    // handleScore +1
 
     // handleDropWrong
     // when trash is dropped
@@ -94,12 +139,47 @@ function Game() {
 
     return (
 
-        <div>
+        <div className="container">
 
-            {/* start button trigger */}
-            <button start onClick={() => setGameStart({ ...gameStart, start: true })} className="start-button"> start button</button>
+            <animated.div className="game-start">
+
+                <button onClick={() => setGameStart(true)} className="start-button"> start button</button>
+
+            </animated.div>
+
+            <animated.div className="game-stats">
+
+                <GameStats />
+
+            </animated.div>
+
+            <animated.div className="trash-container">
+
+                <TrashContainer />
+
+            </animated.div>
+
+            <animated.div className="bins-container">
+
+                <BinsContainer />
+
+            </animated.div>
+
+            <animated.div className="user-message-container">
+
+                <UserMessageContainer />
+
+            </animated.div>
+
+            <animated.div className="recycle-fact">
+
+                <RecycleFact />
+
+            </animated.div>
+
 
         </div>
+
     )
 }
 

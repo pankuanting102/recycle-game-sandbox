@@ -38,8 +38,8 @@ export const Dustbin = ({ accept, lastDroppedItem, onDrop, asset }) => {
 
 
 
-// {isActive
-//     ? 'Release to drop'
-//     : `This dustbin accepts: ${accept.join(', ')}`}
+{isActive
+    ? 'Release to drop'
+    : `This dustbin accepts: ${accept.join(', ')}`}
 
-//         {lastDroppedItem && (<p>Last dropped: {JSON.stringify(lastDroppedItem)}</p>)}
+        {lastDroppedItem && (<p>Last dropped: {JSON.stringify(lastDroppedItem)}</p>)}
