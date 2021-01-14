@@ -1,3 +1,7 @@
+import clamp from 'lodash-es/clamp'
+import { useSpring, animated } from 'react-spring'
+import { useGesture } from 'react-with-gesture'
+
 
 function TrashContainer() {
 
