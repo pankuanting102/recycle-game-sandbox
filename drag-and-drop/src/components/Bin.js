@@ -31,15 +31,14 @@ export const Dustbin = ({ accept, lastDroppedItem, onDrop, asset }) => {
         backgroundColor = 'darkkhaki';
     }
     return (<div ref={drop}>
-			
+			{isActive
+    ? 'Release to drop'
+    : `This dustbin accepts: ${accept.join(', ')}`}
+
+        {lastDroppedItem && (<p>Last dropped: {JSON.stringify(lastDroppedItem)}</p>)}
             <img alt="bin" src={asset} style={style}/>
 		</div>);
 };
 
 
 
-{isActive
-    ? 'Release to drop'
-    : `This dustbin accepts: ${accept.join(', ')}`}
-
-        {lastDroppedItem && (<p>Last dropped: {JSON.stringify(lastDroppedItem)}</p>)}
