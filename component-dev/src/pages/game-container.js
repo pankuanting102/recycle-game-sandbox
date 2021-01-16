@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { useSpring, animated } from 'react-spring';
+import { useDrag } from 'react-use-gesture'
 import clamp from 'lodash-es/clamp';
 import { useGesture } from 'react-with-gesture'
 
@@ -95,6 +96,12 @@ function Game() {
 
     // handle gameOver
     // pop up game summary modal
+
+
+
+
+
+
 
     return (
 
