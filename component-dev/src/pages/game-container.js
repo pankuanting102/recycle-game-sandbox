@@ -24,10 +24,6 @@ function Game() {
 
     const GlobalState = useGlobalContext();
 
-    // game initial state
-
-    // GAME START
-
     // pop up at wrong drop
     const [gameRecycleFacts, setGameRecycleFacts] = useState({
         1: "glass",
@@ -60,18 +56,12 @@ function Game() {
 
 
     useEffect(() => {
-
-
+        
+        // handle gameRest
+        // reset the setState
+        // call randomize position
 
     });
-
-    // handle gameRest
-    // reset the setState
-    // call randomize position
-
-    // trashRandomPosition
-    // math.random position
-    // assign to new state 
 
     // animateTrashInit
 
@@ -96,11 +86,6 @@ function Game() {
 
     // handle gameOver
     // pop up game summary modal
-
-
-
-
-
 
 
     return (
