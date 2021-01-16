@@ -1,10 +1,11 @@
 
-const BinsContainer = () => {
+
+const BinsContainer = ({asset, index}) => {
 
     console.log("BinContainer!");
 
     return (
-        <div>BinContainer!</div>
+       <img src={asset}/>
     )
 };
 

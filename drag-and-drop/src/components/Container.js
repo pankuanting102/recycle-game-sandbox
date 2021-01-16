@@ -27,7 +27,6 @@ export const Container = () => {
             lastDroppedItem: null, asset: Bin
         },
         { accepts: [ItemTypes.PAPER, NativeTypes.FILE], asset: Bin },
-        { accepts: [ItemTypes.PAPER, NativeTypes.FILE], asset: Bin },
     ]);
     const [boxes] = useState([
         { name: Glass, type: ItemTypes.GLASS },
