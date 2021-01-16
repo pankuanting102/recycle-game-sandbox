@@ -1,5 +1,5 @@
 
-function BinsContainer() {
+const BinsContainer = () => {
 
     console.log("BinContainer!");
 

@@ -1,5 +1,4 @@
-
-function GameStats() {
+const GameStats = () => {
 
     console.log("GameStats!");
 

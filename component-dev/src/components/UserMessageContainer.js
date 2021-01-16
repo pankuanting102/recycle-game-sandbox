@@ -1,5 +1,5 @@
 
-function UserMessageContainer() {
+const UserMessageContainer = () => {
 
     console.log("UserMessageContainer!");
 

@@ -1,5 +1,4 @@
-
-function RecycleFact() {
+const RecycleFact = () => {
 
     console.log("RecycleFact!");
     

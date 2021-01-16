@@ -1,4 +1,4 @@
-function TrashContainer() {
+const TrashContainer = () => {
 
     console.log("TrashContainer!");
     return (
