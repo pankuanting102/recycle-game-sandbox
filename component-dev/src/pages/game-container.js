@@ -5,13 +5,15 @@ import { useSpring, animated } from 'react-spring';
 import clamp from 'lodash-es/clamp';
 import { useGesture } from 'react-with-gesture'
 
-
+// the global store gives the provider and consumer
+import { useGlobalContext } from "../utils/GlobalContext";
 
 import GameStats from "../components/GameStats";
 import BinsContainer from "../components/BinsContainer";
-import TrashContainer from "../components/RecycleFact";
+import TrashContainer from "../components/TrashContainer";
 import UserMessageContainer from "../components/UserMessageContainer";
 import RecycleFact from "../components/RecycleFact";
+import Timer from "../components/Timer"
 
 
 // if logged in => play  
@@ -19,25 +21,21 @@ import RecycleFact from "../components/RecycleFact";
 
 function Game() {
 
+    const GlobalState = useGlobalContext();
+
     // game initial state
 
     // GAME START
-    const [gameStart, setGameStart] = useState(false);
-    const [gameTimer, setGameTimer] = useState(60);
-
-    // const [gameStart, setGameStart] = useState({
-    //     start: false,
-    //     timer: 60,
-    //     score: 0,  
-    // });
-
-    // from db user authentication id
-    const [gamePlayerName, setGamePlayerName] = useState("");
-    const [gameScore, setGameScore] = useState(0);
-
 
     // pop up at wrong drop
-    const [gameRecycleFacts, setGameRecycleFacts] = useState("");
+    const [gameRecycleFacts, setGameRecycleFacts] = useState({
+        1: "glass",
+        2: "metal",
+        3: "paper",
+        4: "food waste",
+        5: "normal",
+        6: "plastic",
+    });
 
 
     // GAME ASSETS
@@ -49,6 +47,7 @@ function Game() {
         positionY: 0,
         asset: "",
         trashType: "",
+        trashId: "",
     });
 
 
@@ -59,63 +58,15 @@ function Game() {
     });
 
 
-
-    // ANIMATE + MOVE HOOKS
-
-    // drag:
-
-
-    // drop:
-
-
-    // GAME END
-    const [gameEnd, setGameEnd] = useState(false);
-    const [gameEndSummary, setGameEndSummary] = useState("");
-    const [newHighScore, setNewHighScore] = useState(false);
-
-    // if (newHighScore) {
-    //     get score
-    //     write to database
-    // }
-
-    /////////////////////
-
-    // HANDLE FUNCTIONS
-
-    // handle gameStart
-
     useEffect(() => {
-
-        if (gameStart) {
-
-            console.log("start");
-
-            // call timerCountDown ()
-            // game reset()
-
-        }
-
-        
-
-
-
 
 
 
     });
 
-
-
-
     // handle gameRest
     // reset the setState
     // call randomize position
-
-    // handle score function
-
-    // handle timerCountDown function (setTimeout)
-    // when = 0
-    // call gameOver
 
     // trashRandomPosition
     // math.random position
@@ -127,27 +78,33 @@ function Game() {
 
     // animateTrashDrop
 
-    // handleDropCorrect
-    // when trash is dropped
-    // destroy 
-    // handleScore +1
+    const handleAnswer = (event) => {
 
-    // handleDropWrong
-    // when trash is dropped
-    // call fact message pop up
+        if (trash.trashType === bin.trashType) {
+
+            // setGlobalState({ ...GlobalState, gameScore: GlobalState.gameScore + 1 })
+
+        } else {
+
+            const FactId = event.target.value
+
+            alert(gameRecycleFacts.FactId)
+
+        }
+    }
 
     // handle gameOver
     // pop up game summary modal
-
-
 
     return (
 
         <div className="container">
 
+            <Timer />
+
             <animated.div className="game-start">
 
-                <button onClick={() => setGameStart(true)} className="start-button"> start button</button>
+                <button onClick={GlobalState.handleGameStart} className="start-button"> start button</button>
 
             </animated.div>
 
@@ -159,7 +116,7 @@ function Game() {
 
             <animated.div className="trash-container">
 
-                <TrashContainer/>
+                <TrashContainer />
 
             </animated.div>
 

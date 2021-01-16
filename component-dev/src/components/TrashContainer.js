@@ -1,8 +1,10 @@
 const TrashContainer = () => {
 
     console.log("TrashContainer!");
+
     return (
-        <div>TrashContainer</div>
+        
+        <div>TrashContainer!</div>
     )
 
 };

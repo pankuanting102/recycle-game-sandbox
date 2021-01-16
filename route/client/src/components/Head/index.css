@@ -1,0 +1,16 @@
+li{
+    float:left;
+    display:inline;
+    margin-right: 20px;
+    color: black !important;
+    font-size: 18px;
+}
+
+a{
+    color: black !important;
+}
+
+nav{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
