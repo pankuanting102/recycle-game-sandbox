@@ -13,7 +13,7 @@ import Tire from './Assets/tire.svg';
 import GlassBottle from './Assets/glass_bottle_1.svg';
 import Lighter from './Assets/lighter.svg';
 import Bone from './Assets/fish_bone.svg';
-import FaceWash from './Assets/facewash_tube.svg';
+import { ReactComponent as FaceWash } from './Assets/facewash_tube.svg';
 
 
 
@@ -41,6 +41,7 @@ export const Container = () => {
         { name: FaceWash, type: ItemTypes.GLASS },
     ]);
     const [droppedBoxNames, setDroppedBoxNames] = useState([]);
+    
     function isDropped(boxName) {
         return droppedBoxNames.indexOf(boxName) > -1;
     }
