@@ -33,19 +33,21 @@ const GameCanvas = () => {
   ]);
   return (
     <div>
-      <div style={{ overflow: "hidden", clear: "both" }}>
+      
+      <div  style={{ overflow: "visible", clear: "both" }}>
         {trash.map(({ name }, index) => (
-          <TrashContainer name={name} key={index}/>
+          <TrashContainer zIndex={1} name={name} key={index}/>
           
 
         ))}
        
       </div>
-      <div style={{ overflow: "hidden", clear: "both" }}>
+      <div  style={{ overflow: "visible", clear: "both" }}>
         {bins.map(({ asset } , index) => (
-          <BinsContainer asset={asset}  key={index}/>
+          <BinsContainer zIndex={0} asset={asset}  key={index}/>
         ))}
       </div>
+
         
 
     </div>
