@@ -28,7 +28,7 @@ export const Box = ({ name, type, isDropped }) => {
     return (
     <animated.div ref={drag} >
  
-			<img src={name} style={{ ...style, opacity }}/>
+			<img src={name} style={{ ...style}, opacity}/>
     
     </animated.div>
     );
