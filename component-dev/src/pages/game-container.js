@@ -55,15 +55,7 @@ function Game() {
     trashType: "",
   });
 
-  useEffect(() => {});
-
-  // handle gameRest
-  // reset the setState
-  // call randomize position
-
-  // trashRandomPosition
-  // math.random position
-  // assign to new state
+    // animateTrashInit
 
   // animateTrashInit
 

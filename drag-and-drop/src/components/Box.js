@@ -26,7 +26,7 @@ export const Box = ({ name, type, isDropped }) => {
         }),
     });
     return (
-    <animated.div ref={drag} {...bind()} style={{ transform: xy.interpolate((x, y) => `translate3d(${x}px,${y}px,0)`) }}>
+    <animated.div ref={drag} >
  
 			<img src={name} style={{ ...style}, opacity}/>
     
