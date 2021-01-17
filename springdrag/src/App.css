@@ -21,15 +21,15 @@ html {
 }
 
 #root > div {
-  position: relative;
+  /* position: relative;
   width: 30vw;
   height: 30vw;
   background: grey;
   border-radius: 5px;
-  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3); */
   transition: box-shadow 0.5s, opacity 0.5s;
   will-change: transform;
-  border: 10px solid white;
+  /* border: 10px solid white; */
   cursor: grab;
   overflow: hidden;
   touch-action: none;
@@ -57,9 +57,9 @@ html {
   cursor: default;
 }
 
-#root > div:hover {
+/* #root > div:hover {
   box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
-}
+} */
 
 button {
   position: absolute;

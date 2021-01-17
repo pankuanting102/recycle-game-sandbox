@@ -10,26 +10,26 @@ const Game = () => {
 
   return (
     <div className='drag_food_to_animals'>
-      <h2>Demo: Drag the food from the scrolling box to the correct animal</h2>
+      <h2>Recycle Trash to Corresponding Bin!</h2>
       <div className="foods" >
-          <Food customDragElement={customElem} targetKey="fruitsAndVeggies" label="orange" tastes="Delicious" image="img/orange.png"/>
-          <Food customDragElement={customElem} targetKey="dogFood" label="pickle" tastes="It tasted weird" image="img/pickle.png" />
-        <Food customDragElement={customElem} dragElemOpacity={0.4} targetKey="dogFood" label="cheeseburger" tastes="Yummy" image="img/surprise.png" />
-        <Food customDragElement={customElem} targetKey="fruitsAndVeggies" label="bananas" tastes="Yummy" image="img/banana.png" />
+          <Food customDragElement={customElem} targetKey="fruitsAndVeggies" label="banana" tastes="Delicious" image="assets/banana_1.svg"/>
+          <Food customDragElement={customElem} targetKey="dogFood" label="pickle" tastes="It tasted weird" image="assets/fish_bone.svg" />
+        <Food customDragElement={customElem} dragElemOpacity={0.4} targetKey="dogFood" label="lighter" tastes="Yummy" image="assets/lighter.svg" />
+        <Food customDragElement={customElem} targetKey="fruitsAndVeggies" label="bananas" tastes="Yummy" image="assets/banana_2.svg" />
       </div>
       <div className="animals">
         <Animal targetKey="fruitsAndVeggies" name="Kong">
-          <img src="img/gorilla.png" alt="gorilla" width="100" />
-          <h5>I eat fruit</h5>
+          <img src="assets/bin_closed.svg" alt="gorilla" width="100" />
+          <h5>Organic</h5>
         </Animal>
         <Animal targetKey="dogFood" name="Skippy">
-          <img src="img/puppy.png" alt="puppy" width="100" />
-          <h5>I eat meat & pickles</h5>
+          <img src="assets/bin_closed.svg" alt="puppy" width="100" />
+          <h5>Metal</h5>
         </Animal>
         <Animal targetKey="dogFood" name="Bozo">
           <Animal targetKey="fruitsAndVeggies" name="Bozo">
-            <img src="img/trashcan.png" alt="trashcan" width="100" />
-            <h5>I eat everything</h5>
+            <img src="assets/bin_closed.svg" alt="trashcan" width="100" />
+            <h5>Glass</h5>
           </Animal>
         </Animal>
       </div>
