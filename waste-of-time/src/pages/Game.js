@@ -78,7 +78,9 @@ const Game = () => {
         <ReactSVG src={Bone} />
 
       </animated.div>
+     
       <img alt="bin" src={Bin} ref={binRef} />
+
     </>
   );
 }
