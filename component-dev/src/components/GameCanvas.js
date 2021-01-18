@@ -13,6 +13,10 @@ import GlassBottle from "./assets/glass_bottle_1.svg";
 import Lighter from "./assets/lighter.svg";
 import Bone from "./assets/fish_bone.svg";
 import FaceWash from "./assets/facewash_tube.svg";
+
+
+
+
 const GameCanvas = () => {
   const [bins , setBin] = useState([
     { asset: Bin },
@@ -40,6 +44,7 @@ const GameCanvas = () => {
           
 
         ))}
+      
        
       </div>
       <div  style={{ overflow: "visible", clear: "both" }}>
