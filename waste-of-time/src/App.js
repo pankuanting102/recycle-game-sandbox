@@ -1,14 +1,14 @@
-import './App.css';
-import Game from "./pages/Game-Container.js"
+import Game from "./pages/Game.js"
 
-function App() {
-  return (
+const App = () => {
+   
+    return (
+        <>
+       
+        <Game />
 
-    <div className="App">
-     <Game />
-    </div>
-
-  );
+        </>
+    );
 };
 
 export default App;
