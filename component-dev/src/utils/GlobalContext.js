@@ -18,6 +18,7 @@ const GlobalContextProvider = (props) => {
         loggedIn: false,
         playerId: 0,
         playerLevel: 1,
+        gameOver: false,
         highScore: 0,
         gameScore: 0,
 

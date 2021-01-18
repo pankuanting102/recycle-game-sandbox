@@ -37,6 +37,24 @@ function Game() {
     6: "plastic",
   });
 
+//   useEffect(
+
+//   setIntervalRef = setInterval(
+//        () => {setTimerState - 1},
+//           if (timerState === 0) {
+//               setGameOverState (true) 
+//             clearGame ()
+//           }
+//         ) ( decrease every second) always 
+
+//   return (
+
+//     function to clear 
+//     clear interval (setIntervalRef)
+//   )
+
+//  )
+
   // GAME ASSETS
 
   // trash
@@ -55,7 +73,7 @@ function Game() {
     trashType: "",
   });
 
-    // animateTrashInit
+  // animateTrashInit
 
   // animateTrashInit
 
