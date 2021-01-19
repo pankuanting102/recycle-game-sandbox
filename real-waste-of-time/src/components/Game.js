@@ -15,6 +15,16 @@ const Game = () => {
 
   const boxRef = useRef(null)
 
+
+  // BIN REFS
+  // const binRef_1 = useRef()
+  // const binRef_2 = useRef()
+  // const binRef_3 = useRef()
+  // const binRef_4 = useRef()
+  // const binRef_5 = useRef()
+  // const binRef_6 = useRef()
+
+
   useEffect(() => {
 
     // module aliases
@@ -24,7 +34,7 @@ const Game = () => {
     const Bodies = Matter.Bodies
     const Mouse = Matter.Mouse
     const MouseConstraint = Matter.MouseConstraint
-
+    const Composite = Matter.Composite
 
 
     const engine = Engine.create({
@@ -44,41 +54,6 @@ const Game = () => {
     });
 
 
-
-    // const ballA = Bodies.circle(210, 100, 50, {
-    //   restitution: 0.5,
-    //   label: "metal",
-    //   render: {
-    //     sprite: {
-    //       texture: './banana_1.svg',
-    //       xScale: (0.3),
-    //       yScale: (0.3)
-    //     }
-    //   },
-    // });
-    // const ballB = Bodies.circle(210, 100, 50, {
-    //   render: {
-    //     sprite: {
-    //       texture: './fish_bone.svg',
-    //       xScale: (0.3),
-    //       yScale: (0.3)
-    //     }
-    //   },
-    //   label: fishRef.current
-    // });
-
-    // const ballC = (210, 100, 30, {
-    //   restitution: 0.5,
-    //   label: "metal",
-    //   render: {
-    //     sprite: {
-    //       texture: './banana_1.svg',
-    //       xScale: (0.1),
-    //       yScale: (0.1)
-    //     }
-    //   },
-    // });
-
     World.add(engine.world, [
 
       // top bar
@@ -89,7 +64,8 @@ const Game = () => {
           fillStyle: 'white',
           strokeStyle: 'white',
           lineWidth: 0
-        }
+        },
+        label: "locked"
       }),
 
       // floor bar
@@ -99,7 +75,8 @@ const Game = () => {
           fillStyle: 'white',
           strokeStyle: 'white',
           lineWidth: 0
-        }
+        },
+        label: "locked"
       }),
 
       // separation bar
@@ -109,7 +86,8 @@ const Game = () => {
           fillStyle: 'white',
           strokeStyle: 'white',
           lineWidth: 0
-        }
+        },
+        label: "locked"
       }),
 
       // right wall
@@ -119,7 +97,8 @@ const Game = () => {
           fillStyle: 'white',
           strokeStyle: 'white',
           lineWidth: 0
-        }
+        },
+        label: "locked"
       }),
 
       // left wall
@@ -129,7 +108,8 @@ const Game = () => {
           fillStyle: 'white',
           strokeStyle: 'white',
           lineWidth: 0
-        }
+        },
+        label: "locked"
       }),
 
     ]);
@@ -150,9 +130,6 @@ const Game = () => {
         },
       });
 
-
-    console.log(MouseConstraint)
-
     World.add(engine.world, mouseConstraint);
 
     //  TRASH CANS
@@ -160,13 +137,15 @@ const Game = () => {
       Bodies.rectangle(130, 500, 80, 100,
         {
           isStatic: true,
+          isSensor: true,
           render: {
             sprite: {
-              texture: './bin_closed.svg',
+              texture: './bin_green.png',
               xScale: (0.5),
               yScale: (0.5)
             }
           },
+          label: "locked"
         }
       ),
       Bodies.rectangle(280, 500, 80, 100,
@@ -174,11 +153,12 @@ const Game = () => {
           isStatic: true,
           render: {
             sprite: {
-              texture: './bin_closed.svg',
+              texture: './bin_red.png',
               xScale: (0.5),
               yScale: (0.5)
             }
           },
+          label: "locked"
         }
       ),
       Bodies.rectangle(430, 500, 80, 100,
@@ -186,11 +166,12 @@ const Game = () => {
           isStatic: true,
           render: {
             sprite: {
-              texture: './bin_closed.svg',
+              texture: './bin_blue.png',
               xScale: (0.5),
               yScale: (0.5)
             }
           },
+          label: "locked"
         }
       ),
       Bodies.rectangle(580, 500, 80, 100,
@@ -198,11 +179,13 @@ const Game = () => {
           isStatic: true,
           render: {
             sprite: {
-              texture: './bin_closed.svg',
+              texture: './bin_gray.png',
               xScale: (0.5),
               yScale: (0.5)
             }
           },
+          label: "locked",
+
         }
       ),
       Bodies.rectangle(730, 500, 80, 100,
@@ -210,11 +193,12 @@ const Game = () => {
           isStatic: true,
           render: {
             sprite: {
-              texture: './bin_closed.svg',
+              texture: './bin_yellow.png',
               xScale: (0.5),
               yScale: (0.5)
             }
           },
+          label: "locked"
         }
       ),
       Bodies.rectangle(880, 500, 80, 100,
@@ -222,11 +206,12 @@ const Game = () => {
           isStatic: true,
           render: {
             sprite: {
-              texture: './bin_closed.svg',
+              texture: './bin_geen2.png',
               xScale: (0.5),
               yScale: (0.5)
-            }
+            },
           },
+          label: "locked"
         }
       ),
     ])
@@ -245,13 +230,31 @@ const Game = () => {
       }));
     });
 
+    // keep the mouse in sync with rendering
+    render.mouse = mouse;
+
+
+
 
     // mouse event (enddrag) - get user moved object info
     Matter.Events.on(mouseConstraint, "enddrag", function (event) {
 
-      console.log(event)
+      if (event.body.label === "locked") {
+
+        console.log("no")
+      } else {
+        Composite.remove(engine.world, event.body)
+
+      }
+
+      console.log(event.body.label)
+
 
     });
+
+
+
+    // REMOVING
 
     Engine.run(engine);
 
