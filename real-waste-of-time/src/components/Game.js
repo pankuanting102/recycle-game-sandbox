@@ -1,28 +1,22 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef} from "react";
 import Matter from "matter-js";
 
 import trashObjArr from "../utils/trashObjArr"
+import binObjArr from "../utils/binArr"
 
 const Game = () => {
 
   // ============================================================
   // JS GAME LOGIC
 
+  // score state
+  // const [ score, setScore ] = useState(0)
 
 
   // ============================================================
   // MATTER.JS  (useEffect)
 
-  const boxRef = useRef(null)
-
-
-  // BIN REFS
-  // const binRef_1 = useRef()
-  // const binRef_2 = useRef()
-  // const binRef_3 = useRef()
-  // const binRef_4 = useRef()
-  // const binRef_5 = useRef()
-  // const binRef_6 = useRef()
+  const boxRef = useRef()
 
 
   useEffect(() => {
@@ -116,7 +110,6 @@ const Game = () => {
 
     World.add(engine.world, [trashObjArr[1], trashObjArr[3], trashObjArr[2], trashObjArr[0], trashObjArr[2]]);
 
-    // trashCans
 
     // add mouse control
     var mouse = Mouse.create(render.canvas),
@@ -133,89 +126,7 @@ const Game = () => {
     World.add(engine.world, mouseConstraint);
 
     //  TRASH CANS
-    World.add(engine.world, [
-      Bodies.rectangle(130, 500, 80, 100,
-        {
-          isStatic: true,
-          isSensor: true,
-          render: {
-            sprite: {
-              texture: './bin_green.png',
-              xScale: (0.5),
-              yScale: (0.5)
-            }
-          },
-          label: "locked"
-        }
-      ),
-      Bodies.rectangle(280, 500, 80, 100,
-        {
-          isStatic: true,
-          render: {
-            sprite: {
-              texture: './bin_red.png',
-              xScale: (0.5),
-              yScale: (0.5)
-            }
-          },
-          label: "locked"
-        }
-      ),
-      Bodies.rectangle(430, 500, 80, 100,
-        {
-          isStatic: true,
-          render: {
-            sprite: {
-              texture: './bin_blue.png',
-              xScale: (0.5),
-              yScale: (0.5)
-            }
-          },
-          label: "locked"
-        }
-      ),
-      Bodies.rectangle(580, 500, 80, 100,
-        {
-          isStatic: true,
-          render: {
-            sprite: {
-              texture: './bin_gray.png',
-              xScale: (0.5),
-              yScale: (0.5)
-            }
-          },
-          label: "locked",
-
-        }
-      ),
-      Bodies.rectangle(730, 500, 80, 100,
-        {
-          isStatic: true,
-          render: {
-            sprite: {
-              texture: './bin_yellow.png',
-              xScale: (0.5),
-              yScale: (0.5)
-            }
-          },
-          label: "locked"
-        }
-      ),
-      Bodies.rectangle(880, 500, 80, 100,
-        {
-          isStatic: true,
-          render: {
-            sprite: {
-              texture: './bin_geen2.png',
-              xScale: (0.5),
-              yScale: (0.5)
-            },
-          },
-          label: "locked"
-        }
-      ),
-    ])
-
+    World.add(engine.world, binObjArr)
 
     // mouse events (mousedown)
     Matter.Events.on(mouseConstraint, "mousedown", function (event) {
@@ -252,7 +163,7 @@ const Game = () => {
 
     });
 
-
+    
 
     // REMOVING
 

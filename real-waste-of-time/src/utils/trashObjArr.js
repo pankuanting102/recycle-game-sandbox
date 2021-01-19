@@ -1,7 +1,6 @@
 import Matter from "matter-js";
 
 const Bodies = Matter.Bodies
-// const Common = Matter.Common
 
 const banana1 = Bodies.circle(210, 100, 50, {
     restitution: 0.5,
