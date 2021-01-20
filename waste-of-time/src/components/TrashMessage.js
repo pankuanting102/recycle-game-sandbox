@@ -2,7 +2,7 @@ const GameOver = () => {
     
     return <div>
         
-        Game Over!
+        Wrong!
    
     </div>
 }
