@@ -12,6 +12,9 @@ const banana1 = Bodies.circle(210, 100, 50, {
             yScale: (0.3)
         }
     },
+    collisionFilter: {
+        category : 2
+    }
 });
 
 const banana2 = Bodies.circle(210, 100, 50, {
@@ -24,6 +27,9 @@ const banana2 = Bodies.circle(210, 100, 50, {
             yScale: (0.3)
         }
     },
+    collisionFilter: {
+        category : 2
+    }
 });
 
 
@@ -37,6 +43,9 @@ const lighter = Bodies.circle(600, 50, 50, {
             yScale: (0.2)
         }
     },
+    collisionFilter: {
+        category : 1
+    }
 });
 
 
@@ -50,6 +59,9 @@ const eggCarton = Bodies.circle(210, 100, 50, {
             yScale: (0.3)
         }
     },
+    collisionFilter: {
+        category : 3
+    }
 });
 
 

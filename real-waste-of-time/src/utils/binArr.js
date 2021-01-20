@@ -14,7 +14,11 @@ const bin_normal = Bodies.rectangle(130, 500, 80, 100,
                 yScale: (0.5)
             }
         },
-        label: "locked"
+        label: "normal",
+        // type: "locked,"
+        collisionFilter: {
+            category : 1
+        }
     }
 )
 
@@ -28,7 +32,11 @@ const bin_food = Bodies.rectangle(280, 500, 80, 100,
                 yScale: (0.5)
             }
         },
-        label: "locked"
+        label: "food",
+        // type: "locked,"
+        collisionFilter: {
+            category : 2
+        }
     }
 )
 
@@ -42,7 +50,11 @@ const bin_paper = Bodies.rectangle(430, 500, 80, 100,
                 yScale: (0.5)
             }
         },
-        label: "locked"
+        label: "paper",
+        // type: "locked,"
+        collisionFilter: {
+            category : 3
+        }
     }
 )
 
@@ -56,7 +68,11 @@ const bin_glass = Bodies.rectangle(580, 500, 80, 100,
                 yScale: (0.5)
             }
         },
-        label: "locked",
+        label: "glass",
+        // type: "locked,"
+        collisionFilter: {
+            category : 4
+        }
 
     }
 )
@@ -71,7 +87,11 @@ const bin_plastic = Bodies.rectangle(730, 500, 80, 100,
                 yScale: (0.5)
             }
         },
-        label: "locked"
+        label: "plastic",
+        // type: "locked,"
+        collisionFilter: {
+            category : 5
+        }
     }
 )
 
@@ -85,7 +105,11 @@ const bin_metal = Bodies.rectangle(880, 500, 80, 100,
                 yScale: (0.5)
             },
         },
-        label: "locked"
+        label: "metal",
+        // type:"locked,"
+        collisionFilter: {
+            category : 6
+        }
     }
 )
 

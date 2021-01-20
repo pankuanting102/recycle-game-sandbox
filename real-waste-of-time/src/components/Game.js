@@ -1,5 +1,5 @@
-import React, { useEffect, useRef} from "react";
-import Matter from "matter-js";
+import React, { useEffect, useRef } from "react";
+import Matter, { Events } from "matter-js";
 
 import trashObjArr from "../utils/trashObjArr"
 import binObjArr from "../utils/binArr"
@@ -28,7 +28,7 @@ const Game = () => {
     const Bodies = Matter.Bodies
     const Mouse = Matter.Mouse
     const MouseConstraint = Matter.MouseConstraint
-    const Composite = Matter.Composite
+    // const Composite = Matter.Composite
 
 
     const engine = Engine.create({
@@ -111,7 +111,7 @@ const Game = () => {
     World.add(engine.world, [trashObjArr[1], trashObjArr[3], trashObjArr[2], trashObjArr[0], trashObjArr[2]]);
 
 
-    // add mouse control
+    // MOUSE CONTROL
     var mouse = Mouse.create(render.canvas),
       mouseConstraint = MouseConstraint.create(engine, {
         mouse: mouse,
@@ -128,7 +128,8 @@ const Game = () => {
     //  TRASH CANS
     World.add(engine.world, binObjArr)
 
-    // mouse events (mousedown)
+
+    // MOUSE EVENT (mousedown)
     Matter.Events.on(mouseConstraint, "mousedown", function (event) {
       World.add(engine.world, Bodies.circle(150, 50, 30, {
         render: {
@@ -145,27 +146,52 @@ const Game = () => {
     render.mouse = mouse;
 
 
+    // DRAG EVENT (enddrag) - get user moved object info
+    const trashEl = Events.on(mouseConstraint, "startdrag", function (event) {
 
+      let trashLabel = ""
 
-    // mouse event (enddrag) - get user moved object info
-    Matter.Events.on(mouseConstraint, "enddrag", function (event) {
-
-      if (event.body.label === "locked") {
-
-        console.log("no")
-      } else {
-        Composite.remove(engine.world, event.body)
-
+      if (event.body) {
+        trashLabel = event.body.label
       }
+      return trashLabel
 
-      console.log(event.body.label)
+      // if (event.body.label === "locked") {
 
+      //   console.log("no")
+      // } else {
+
+      //   // REMOVING
+      //   Composite.remove(engine.world, event.body)
+
+      // }
+
+      // console.log(event.body.label)
 
     });
 
-    
+    console.log(trashObjArr[0])
+    // COLLISION -- SCORE
+    const binEl = Events.on(mouseConstraint, "enddrag", function (event) {
 
-    // REMOVING
+      let binLabel = ""
+
+      if (event.body.label) {
+
+        binLabel = event.body.label
+      }
+      return binLabel
+
+    })
+
+    // function score (){
+    //   if ()
+    // }
+    
+    console.log(trashEl)
+    console.log(binEl)
+
+
 
     Engine.run(engine);
 
