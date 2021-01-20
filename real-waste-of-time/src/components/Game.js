@@ -28,11 +28,11 @@ const Game = () => {
     const Bodies = Matter.Bodies
     const Mouse = Matter.Mouse
     const MouseConstraint = Matter.MouseConstraint
-    // const Composite = Matter.Composite
-
 
     const engine = Engine.create({
+
       // positionIterations: 20
+
     });
 
     const render = Render.create({
@@ -46,7 +46,6 @@ const Game = () => {
 
       }
     });
-
 
     World.add(engine.world, [
 
@@ -110,7 +109,6 @@ const Game = () => {
 
     World.add(engine.world, [trashObjArr[1], trashObjArr[3], trashObjArr[2], trashObjArr[0], trashObjArr[2]]);
 
-
     // MOUSE CONTROL
     var mouse = Mouse.create(render.canvas),
       mouseConstraint = MouseConstraint.create(engine, {
@@ -167,7 +165,6 @@ const Game = () => {
       // }
 
       // console.log(event.body.label)
-
     });
 
     console.log(trashObjArr[0])
@@ -187,7 +184,7 @@ const Game = () => {
     // function score (){
     //   if ()
     // }
-    
+
     console.log(trashEl)
     console.log(binEl)
 
