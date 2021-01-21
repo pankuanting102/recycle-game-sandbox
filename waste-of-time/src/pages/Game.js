@@ -90,43 +90,45 @@ const Game = () => {
 
     setGameState({ ...gameState, gameStart: !gameState.gameStart });
 
-    console.log(gameState.gameStart)
+    console.log("hi")
 
-    if (!gameState.gameStart) {
-      handleStartTimer()
+    if (gameState.gameStart) {
+      console.log("hiii")
+      // handleStartTimer()
     }
 
   };
 
 
   // timer countdown
-  const [timer, setTimer] = useState(2)
 
-  function handleStartTimer() {
+  // function handleStartTimer() {
 
-   var timerRef = setInterval(
+  //   var timerRef = setInterval(
+
+  //     () => {
+
+  //       console.log("inside interval")
+
+  //       setTimer(timer => timer - 1)
+
+  //       if (timer <= 0) {
+
+  //         handleGameOver()
+  //         clearInterval(timerRef)
+  //       }
+
+  //     }, 1000)
+  // }
+
+  // const [timer, setTimer] = useState(3)
+
+
   
-       () => {
 
-          console.log("inside interval")
+  // function handleGameOver() {
 
-          setTimer(timer => timer - 1)
-
-          if (timer <= 0) {
-
-            handleGameOver()
-            clearInterval(timerRef)
-          }
-
-        }, 1000) 
-    }
-  
-
-  function handleGameOver() {
-
-    console.log("gameover!")
-
-  }
+  // console.log("gameover!")
 
 
   return (
@@ -134,7 +136,7 @@ const Game = () => {
 
       <div>
 
-        {timer}
+        {/* {timer} */}
 
       </div>
 

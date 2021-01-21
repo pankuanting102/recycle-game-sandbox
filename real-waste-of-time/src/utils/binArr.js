@@ -3,7 +3,7 @@ import Matter from "matter-js";
 const Bodies = Matter.Bodies
 
 
-const bin_normal = Bodies.rectangle(130, 500, 80, 100,
+const bin_normal = Bodies.rectangle(100, 700, 80, 100,
     {
         isStatic: true,
         isSensor: true,
@@ -22,7 +22,7 @@ const bin_normal = Bodies.rectangle(130, 500, 80, 100,
     }
 )
 
-const bin_food = Bodies.rectangle(280, 500, 80, 100,
+const bin_food = Bodies.rectangle(300, 700, 80, 100,
     {
         isStatic: true,
         render: {
@@ -40,7 +40,7 @@ const bin_food = Bodies.rectangle(280, 500, 80, 100,
     }
 )
 
-const bin_paper = Bodies.rectangle(430, 500, 80, 100,
+const bin_paper = Bodies.rectangle(500, 700, 80, 100,
     {
         isStatic: true,
         render: {
@@ -58,7 +58,7 @@ const bin_paper = Bodies.rectangle(430, 500, 80, 100,
     }
 )
 
-const bin_glass = Bodies.rectangle(580, 500, 80, 100,
+const bin_glass = Bodies.rectangle(700, 700, 80, 100,
     {
         isStatic: true,
         render: {
@@ -77,7 +77,7 @@ const bin_glass = Bodies.rectangle(580, 500, 80, 100,
     }
 )
 
-const bin_plastic = Bodies.rectangle(730, 500, 80, 100,
+const bin_plastic = Bodies.rectangle(900, 700, 80, 100,
     {
         isStatic: true,
         render: {
@@ -95,7 +95,7 @@ const bin_plastic = Bodies.rectangle(730, 500, 80, 100,
     }
 )
 
-const bin_metal = Bodies.rectangle(880, 500, 80, 100,
+const bin_metal = Bodies.rectangle(1100, 700, 80, 100,
     {
         isStatic: true,
         render: {
