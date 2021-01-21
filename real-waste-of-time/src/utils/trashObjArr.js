@@ -18,7 +18,7 @@ const banana1 = Bodies.circle(210, 100, 50, {
 });
 
 const banana2 = Bodies.circle(210, 100, 50, {
-    // restitution: 0.5,
+    restitution: 0.5,
     label: "food",
     render: {
         sprite: {
@@ -34,7 +34,7 @@ const banana2 = Bodies.circle(210, 100, 50, {
 
 
 const lighter = Bodies.circle(600, 50, 50, {
-    restitution: 0.5,
+    restitution: 0.6,
     label: "garbage",
     render: {
         sprite: {
