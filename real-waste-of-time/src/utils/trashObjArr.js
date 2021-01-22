@@ -4,7 +4,7 @@ const Bodies = Matter.Bodies
 
 const banana1 = Bodies.circle(210, 100, 50, {
     restitution: 0.5,
-    label: "food",
+    label: "normal",
     render: {
         sprite: {
             texture: './banana_1.svg',
@@ -13,13 +13,13 @@ const banana1 = Bodies.circle(210, 100, 50, {
         }
     },
     collisionFilter: {
-        category : 2
+        category : 8
     }
 });
 
 const banana2 = Bodies.circle(210, 100, 50, {
     restitution: 0.5,
-    label: "food",
+    label: "normal",
     render: {
         sprite: {
             texture: './banana_2.svg',
@@ -28,7 +28,7 @@ const banana2 = Bodies.circle(210, 100, 50, {
         }
     },
     collisionFilter: {
-        category : 2
+        category : 8
     }
 });
 
@@ -44,7 +44,7 @@ const lighter = Bodies.circle(600, 50, 50, {
         }
     },
     collisionFilter: {
-        category : 1
+        category : 8
     }
 });
 
@@ -60,7 +60,7 @@ const eggCarton = Bodies.circle(210, 100, 50, {
         }
     },
     collisionFilter: {
-        category : 3
+        category : 8
     }
 });
 
