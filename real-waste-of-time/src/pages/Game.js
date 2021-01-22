@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-// import './App.css';
 import GameCanvas from "../components/GameCanvas"
 import React, { useEffect, useState } from "react";
 
@@ -14,10 +13,7 @@ function Game() {
     const [gameOver, setGameOver] = useState(false);
     const [timer, setTimer] = useState(5);
 
-//  <prop  setTimer ={ setTimer }/>
-
-
-
+    //  <prop  setTimer ={ setTimer }/>
 
     function toggle() {
 
@@ -27,11 +23,9 @@ function Game() {
         if (!gameStart) {
             // handleStartTime()
         }
+    };
 
-    }
-
-
-    //   timer countdown
+    // timer countdown
     useEffect(() => {
         let counter = null;
         if (gameStart) {
@@ -59,15 +53,11 @@ function Game() {
             </button>
 
             <div>
-                {gameOver ? <GameOver setTimer ={setTimer} /> : <TrashMessage />}
+                {gameOver ? <GameOver /> : <TrashMessage />}
+                {/* Timer ={ Timer}  */}
             </div>
 
-
-
-
             <GameCanvas />
-
-
 
         </div>
     );

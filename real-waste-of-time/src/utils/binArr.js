@@ -15,7 +15,6 @@ const bin_normal = Bodies.rectangle(100, 700, 80, 100,
             }
         },
         label: "normal",
-        // type: "locked,"
         collisionFilter: {
             category : 1
         }

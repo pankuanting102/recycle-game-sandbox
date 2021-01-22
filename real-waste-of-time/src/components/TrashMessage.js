@@ -2,8 +2,7 @@ const TrashMessage = () => {
     
     return <div>
         
-        Wrong!
-   
+        
     </div>
 }
 
